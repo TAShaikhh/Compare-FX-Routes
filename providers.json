@@ -1,0 +1,116 @@
+{
+  "providers": [
+    {
+      "name": "AlphaFX",
+      "type": "fiat_broker",
+      "rate_source": "live_api",
+      "api": {
+        "endpoint": "https://api.frankfurter.dev/v1/latest",
+        "docs": "https://frankfurter.dev/"
+      },
+      "fee_model": {
+        "fee_percent": 0.0015,
+        "fee_flat": 0,
+        "fee_currency": "source"
+      }
+    },
+    {
+      "name": "BetaBank",
+      "type": "fiat_broker",
+      "rate_source": "live_api",
+      "api": {
+        "endpoint": "https://open.er-api.com/v6/latest",
+        "docs": "https://www.exchangerate-api.com/docs/free"
+      },
+      "fee_model": {
+        "fee_percent": 0.0008,
+        "fee_flat": 25,
+        "fee_currency": "source"
+      }
+    },
+    {
+      "name": "DeltaMarkets",
+      "type": "fiat_broker",
+      "rate_source": "live_api",
+      "api": {
+        "endpoint": "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies",
+        "docs": "https://github.com/fawazahmed0/exchange-api"
+      },
+      "fee_model": {
+        "fee_percent": 0.0011,
+        "fee_flat": 5,
+        "fee_currency": "source"
+      }
+    },
+    {
+      "name": "GammaCrypto",
+      "type": "stablecoin_venue",
+      "rate_source": "static",
+      "fee_model": {
+        "fee_percent": 0.0010,
+        "fee_flat": 1,
+        "fee_currency": "source"
+      },
+      "pairs": [
+        { "from": "USD", "to": "USDT", "rate": 0.9996 },
+        { "from": "USDT", "to": "USD", "rate": 0.9994 },
+        { "from": "EUR", "to": "USDT", "rate": 1.0742 },
+        { "from": "USDT", "to": "EUR", "rate": 0.9302 },
+        { "from": "GBP", "to": "USDT", "rate": 1.2688 },
+        { "from": "USDT", "to": "GBP", "rate": 0.7880 },
+        { "from": "USDT", "to": "JPY", "rate": 152.40 },
+        { "from": "JPY", "to": "USDT", "rate": 0.00656 },
+        { "from": "USDT", "to": "CAD", "rate": 1.3580 },
+        { "from": "CAD", "to": "USDT", "rate": 0.7363 },
+        { "from": "USDT", "to": "AUD", "rate": 1.5345 },
+        { "from": "AUD", "to": "USDT", "rate": 0.6516 }
+      ]
+    },
+    {
+      "name": "EpsilonChain",
+      "type": "stablecoin_venue",
+      "rate_source": "static",
+      "fee_model": {
+        "fee_percent": 0.0012,
+        "fee_flat": 2,
+        "fee_currency": "source"
+      },
+      "pairs": [
+        { "from": "USD", "to": "USDC", "rate": 0.9998 },
+        { "from": "USDC", "to": "USD", "rate": 0.9996 },
+        { "from": "EUR", "to": "USDC", "rate": 1.0744 },
+        { "from": "USDC", "to": "EUR", "rate": 0.9301 },
+        { "from": "GBP", "to": "USDC", "rate": 1.2686 },
+        { "from": "USDC", "to": "GBP", "rate": 0.7881 },
+        { "from": "USDC", "to": "JPY", "rate": 152.50 },
+        { "from": "JPY", "to": "USDC", "rate": 0.00655 },
+        { "from": "USDC", "to": "CHF", "rate": 0.8822 },
+        { "from": "CHF", "to": "USDC", "rate": 1.1335 },
+        { "from": "USDC", "to": "USDT", "rate": 0.9999 },
+        { "from": "USDT", "to": "USDC", "rate": 0.9999 }
+      ]
+    },
+    {
+      "name": "ZetaSwap",
+      "type": "stablecoin_venue",
+      "rate_source": "static",
+      "fee_model": {
+        "fee_percent": 0.0025,
+        "fee_flat": 0,
+        "fee_currency": "source"
+      },
+      "pairs": [
+        { "from": "USD", "to": "USDT", "rate": 0.9997 },
+        { "from": "USDT", "to": "USD", "rate": 0.9995 },
+        { "from": "USD", "to": "USDC", "rate": 0.9999 },
+        { "from": "USDC", "to": "USD", "rate": 0.9997 },
+        { "from": "USDT", "to": "USDC", "rate": 1.0000 },
+        { "from": "USDC", "to": "USDT", "rate": 1.0000 },
+        { "from": "USDT", "to": "CAD", "rate": 1.3582 },
+        { "from": "CAD", "to": "USDT", "rate": 0.7362 },
+        { "from": "USDC", "to": "AUD", "rate": 1.5348 },
+        { "from": "AUD", "to": "USDC", "rate": 0.6515 }
+      ]
+    }
+  ]
+}

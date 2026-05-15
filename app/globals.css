@@ -1,0 +1,108 @@
+/* ---------------------------------------------------------------------------
+ * Global styles and design tokens
+ *
+ * The design system uses CSS custom properties for all colours so the
+ * palette can be adjusted in one place.  The grid background gives the
+ * app an "engineering console" feel without competing with the content.
+ * --------------------------------------------------------------------------- */
+
+@import "tailwindcss";
+
+/* --- Design tokens --- */
+
+:root {
+  --background: #f6f7f4;
+  --foreground: #20231f;
+  --muted: #636a60;
+  --line: #d9ded3;
+  --panel: #ffffff;
+  --accent: #2f6f5e;
+  --accent-dark: #214e43;
+  --danger: #9f3a38;
+  --warning: #8a621d;
+}
+
+/* --- Base reset --- */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
+}
+
+body {
+  min-height: 100dvh;
+  margin: 0;
+  background:
+    linear-gradient(90deg, rgba(32, 35, 31, 0.035) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(32, 35, 31, 0.035) 1px, transparent 1px),
+    var(--background);
+  background-size: 48px 48px;
+  color: var(--foreground);
+  font-family: var(--font-outfit), Arial, sans-serif;
+}
+
+/* --- Form elements --- */
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+/* --- Typography --- */
+
+.number {
+  font-family: var(--font-ibm-plex-mono), "SFMono-Regular", Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- Skeleton loading shimmer --- */
+
+.route-skeleton {
+  position: relative;
+  overflow: hidden;
+}
+
+.route-skeleton::after {
+  animation: shimmer 1.25s infinite;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.72), transparent);
+  content: "";
+  inset: 0;
+  position: absolute;
+  transform: translateX(-100%);
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* --- Custom dropdown animation --- */
+
+.dropdown-enter {
+  animation: dropdown-in 150ms ease-out;
+}
+
+@keyframes dropdown-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
